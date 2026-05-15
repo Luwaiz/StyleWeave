@@ -185,7 +185,7 @@ const WorkGrid = () => {
     name,
     color: NICHE_COLORS[name],
     videos: videos.filter((v) => v.category === name),
-  })).filter((n) => n.videos.length > 0);
+  }));
 
   return (
     <section id="work" className="work-section">
@@ -209,8 +209,6 @@ const WorkGrid = () => {
         <div className="work-loading">
           <span /><span /><span />
         </div>
-      ) : grouped.length === 0 ? (
-        <p className="work-empty">No work added yet.</p>
       ) : (
         <motion.div
           className="niche-list"

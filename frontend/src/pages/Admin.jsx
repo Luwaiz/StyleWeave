@@ -150,9 +150,9 @@ const VideoFormModal = ({ initial, onSave, onClose, saving }) => {
               />
             </div>
 
-            {/* Category */}
+            {/* Niche */}
             <div className="admin-field">
-              <label>Category *</label>
+              <label>Niche *</label>
               <select value={form.category} onChange={set('category')}>
                 {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
               </select>
