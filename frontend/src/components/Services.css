@@ -1,0 +1,152 @@
+/* ════════════════════════════════════
+   SERVICES SECTION
+════════════════════════════════════ */
+
+.services-section {
+  padding: 120px 10%;
+  position: relative;
+}
+
+.services-section__header {
+  max-width: 600px;
+  margin-bottom: 56px;
+}
+
+.services-section__subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ── Grid ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* ── Card ── */
+.service-card {
+  position: relative;
+  padding: 36px 30px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--card-accent, var(--glass-border-active));
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Top accent line ── */
+.service-card__accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+}
+
+/* ── Icon ── */
+.service-card__icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-card__icon {
+  transform: scale(1.08);
+}
+
+/* ── Text ── */
+.service-card__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+.service-card__tagline {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+.service-card__desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* ── Capabilities list ── */
+.service-card__capabilities {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.service-card__cap-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.service-card__cap-bullet {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── CTA Link ── */
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding: 10px 0;
+  border-top: 1px solid;
+  margin-top: auto;
+  padding-top: 16px;
+  transition: gap 0.2s ease, opacity 0.2s ease;
+  opacity: 0.7;
+}
+
+.service-card__link:hover {
+  gap: 14px;
+  opacity: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .services-section {
+    padding: 80px 6%;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

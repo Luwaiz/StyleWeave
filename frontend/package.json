@@ -1,22 +1,23 @@
 {
-    "name": "styleweave-frontend",
+    "name": "chidera-uwannah-portfolio",
     "version": "1.0.0",
     "private": true,
-    "description": "StyleWeave - AI-Powered Nigerian Fashion Visualization",
+    "description": "Chidera Uwannah | Motion Designer & Videographer - Portfolio of Chidera Uwannah, a professional videographer, video editor, and animator specializing in futuristic and cinematic visuals.",
     "dependencies": {
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0",
-      "react-router-dom": "^6.20.0",
-      "framer-motion": "^10.16.16",
-      "axios": "^1.6.2"
+        "axios": "^1.6.2",
+        "firebase": "^12.13.0",
+        "framer-motion": "^10.16.16",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.20.0"
     },
     "devDependencies": {
-      "@vitejs/plugin-react": "^4.2.1",
-      "vite": "^5.0.8"
+        "@vitejs/plugin-react": "^4.2.1",
+        "vite": "^5.0.8"
     },
     "scripts": {
-      "dev": "vite",
-      "build": "vite build",
-      "preview": "vite preview"
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
     }
-  }
+}
