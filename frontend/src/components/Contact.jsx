@@ -5,8 +5,8 @@ import './Contact.css';
 const SOCIALS = [
   {
     label: 'Instagram',
-    handle: '@chidera.visuals',
-    href: 'https://instagram.com',
+    handle: '@chido.7x',
+    href: 'https://www.instagram.com/chido.7x?igsh=MTkwbjVqeHJ1NGt4Ng%3D%3D&utm_source=qr',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5"/>
@@ -16,20 +16,19 @@ const SOCIALS = [
     ),
   },
   {
-    label: 'YouTube',
-    handle: 'Chidera Uwannah',
-    href: 'https://youtube.com',
+    label: 'TikTok',
+    handle: '@prodbychido',
+    href: 'https://www.tiktok.com/@prodbychido?_r=1&_t=ZS-96NrtacIBM4',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <rect x="2" y="5" width="20" height="14" rx="3" stroke="currentColor" strokeWidth="1.5"/>
-        <path d="M10 9l5 3-5 3V9z" fill="currentColor"/>
+        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
   },
   {
     label: 'LinkedIn',
     handle: 'Chidera Uwannah',
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/in/chidera-uwannah-05a548297?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="1.5"/>
