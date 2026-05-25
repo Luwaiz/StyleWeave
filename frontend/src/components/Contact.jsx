@@ -5,8 +5,8 @@ import './Contact.css';
 const SOCIALS = [
   {
     label: 'Instagram',
-    handle: '@chido.7x',
-    href: 'https://www.instagram.com/chido.7x?igsh=MTkwbjVqeHJ1NGt4Ng%3D%3D&utm_source=qr',
+    handle: '@prodbychido_',
+    href: 'https://www.instagram.com/prodbychido_?igsh=MTkwbjVqeHJ1NGt4Ng%3D%3D&utm_source=qr',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
         <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.5"/>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   collection, addDoc, updateDoc, deleteDoc,
   doc, onSnapshot, serverTimestamp,
@@ -30,6 +30,21 @@ function getAutoThumbnail(url) {
   const yt = url?.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([^&\s?]+)/);
   if (yt) return `https://img.youtube.com/vi/${yt[1]}/hqdefault.jpg`;
   return null;
+}
+
+async function uploadToCloudinary(file) {
+  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+  const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', uploadPreset);
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+    { method: 'POST', body: formData }
+  );
+  if (!res.ok) throw new Error('Upload failed');
+  const data = await res.json();
+  return data.secure_url;
 }
 
 function detectVideoSource(url) {
@@ -114,6 +129,25 @@ const VideoFormModal = ({ initial, onSave, onClose, saving }) => {
 
   const autoThumb = getAutoThumbnail(form.videoUrl);
   const source = detectVideoSource(form.videoUrl);
+  const thumbInputRef = useRef(null);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState('');
+
+  const handleThumbnailUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    setUploadError('');
+    try {
+      const url = await uploadToCloudinary(file);
+      setForm((f) => ({ ...f, thumbnailUrl: url }));
+    } catch {
+      setUploadError('Upload failed. Check your Cloudinary config in .env.');
+    } finally {
+      setUploading(false);
+      e.target.value = '';
+    }
+  };
 
   const set = (field) => (e) => {
     const val = e.target.value;
@@ -200,11 +234,29 @@ const VideoFormModal = ({ initial, onSave, onClose, saving }) => {
                   <img src={form.thumbnailUrl} alt="thumbnail preview" />
                 </div>
               )}
+              <div className="admin-thumb-row">
+                <input
+                  value={form.thumbnailUrl}
+                  onChange={set('thumbnailUrl')}
+                  placeholder="https://… or upload an image"
+                />
+                <button
+                  type="button"
+                  className="admin-btn admin-btn--ghost admin-btn--sm"
+                  onClick={() => thumbInputRef.current?.click()}
+                  disabled={uploading}
+                >
+                  {uploading ? 'Uploading…' : 'Upload'}
+                </button>
+              </div>
               <input
-                value={form.thumbnailUrl}
-                onChange={set('thumbnailUrl')}
-                placeholder="https://… (optional, auto-extracted for YouTube)"
+                ref={thumbInputRef}
+                type="file"
+                accept="image/*"
+                style={{ display: 'none' }}
+                onChange={handleThumbnailUpload}
               />
+              {uploadError && <p className="admin-error">{uploadError}</p>}
             </div>
 
             {/* Description */}

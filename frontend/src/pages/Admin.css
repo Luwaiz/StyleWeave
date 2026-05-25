@@ -521,6 +521,17 @@
   line-height: 1.5;
 }
 
+/* ── Thumbnail URL + upload button row ── */
+.admin-thumb-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.admin-thumb-row input {
+  flex: 1;
+}
+
 /* ── Hint text ── */
 .admin-hint-inline {
   font-size: 0.72rem;

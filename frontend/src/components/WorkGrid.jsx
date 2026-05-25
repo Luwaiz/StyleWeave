@@ -58,7 +58,6 @@ const VideoModal = ({ video, onClose }) => {
         onClick={(e) => e.stopPropagation()}
         style={{ '--accent': accent }}
       >
-        <button className="vmodal__close" onClick={onClose}>✕</button>
         <div className="vmodal__frame">
           <iframe
             src={getEmbedUrl(video.videoUrl)}
@@ -77,6 +76,7 @@ const VideoModal = ({ video, onClose }) => {
           )}
         </div>
       </motion.div>
+      <button className="vmodal__close" onClick={onClose}>✕</button>
     </motion.div>
   );
 };
