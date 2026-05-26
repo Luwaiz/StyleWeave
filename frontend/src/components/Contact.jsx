@@ -162,7 +162,7 @@ const Contact = () => {
           <div className="contact-direct">
             <p className="contact-direct__label">Direct Email</p>
             <a
-              href="mailto:chidera@example.com"
+              href="mailto:Freduwann@gmail.com"
               className="contact-direct__email"
             >
               chidera@example.com

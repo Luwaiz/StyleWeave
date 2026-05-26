@@ -68,7 +68,7 @@ const Navbar = () => {
 
         {/* ── CTA ── */}
         <motion.a
-          href="mailto:chidera@example.com"
+          href="mailto:Freduwann@gmail.com"
           className="nav-cta"
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -114,7 +114,7 @@ const Navbar = () => {
                 {link.label}
               </motion.a>
             ))}
-            <a href="mailto:chidera@example.com" className="mobile-cta">
+            <a href="mailto:Freduwann@gmail.com" className="mobile-cta">
               Hire Me
             </a>
           </motion.div>
