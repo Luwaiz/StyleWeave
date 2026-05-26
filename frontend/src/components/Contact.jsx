@@ -165,7 +165,7 @@ const Contact = () => {
               href="mailto:Freduwann@gmail.com"
               className="contact-direct__email"
             >
-              chidera@example.com
+              Freduwann@gmail.com
             </a>
             <p className="contact-direct__note">
               Response within 24 hours on business days.
